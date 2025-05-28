@@ -1,4 +1,4 @@
-import React, { use, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import TextInputForm from "./TextInputForm";
 import { useNavigate } from 'react-router-dom'; // Import useNavigate from react-router-dom
 
@@ -33,6 +33,28 @@ function TextInputFromContainer() {
         // IMPORTANT FIX: This is the correct way to toggle the state
         setInputType(inputType === "password" ? "text" : "password");
     }
+    // useEffect(()=>{
+    //     console.log("component loaded");   // not call on updates
+    //     // You can add any initialization logic here if needed
+
+    // },[]); //passing empty dependency array to run only on first load
+    // useEffect(()=>{
+    //     console.log("component first load and update");   //not passind depeency array so it will run on every update
+
+
+    // });
+    // useEffect(()=>{
+    //     console.log("component first loaded and update value changed");   
+        
+
+    // },[inputValue]); // This effect will run whenever inputValue changes
+    // useEffect(()=>{
+    //     console.log("component first loaded and inputType changed");
+    //     // This effect will run whenever inputType changes  
+        
+
+    // },[inputType]); // This effect will run whenever inputType changes
+
   
     return (
         <div>
